@@ -1,8 +1,10 @@
-########################################
-# Random Forest final model
+############################################
+# Random Forest final model 
+# Species: Vole ALL
+# Past Projection: Interglacial
 # Author: Tainá Rocha
 # 27/03/2020
-########################################
+#############################################
 
 #Library
 
