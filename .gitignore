@@ -4,11 +4,10 @@
 .RData
 .Ruserdata
 .tif
+.tiff
+.png
 .Vole_resultados_cru/
 .Pos_process/
-.tif
-.data/
-.docs/
 .data/
 .docs/
 .csv
