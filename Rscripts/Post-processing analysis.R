@@ -11,6 +11,7 @@
 library(raster)
 library(rgdal)
 
+
 ############################################# Loops
 
 setwd("Vole_raw_mean_Present/")
@@ -28,8 +29,8 @@ for(j in 1:length(sub)) {
   
   binary_0.2 <- stack_present >=0.2
   
-  writeRaster(binario, filename=paste0(sub[j], bylayer = T, suffix = "_bin.tif"), overwrite=TRUE)
-  
+  f <- paste0(sub[j], "bin.tif")
+  writeRaster(binary_0.2, filename=f, bylayer=TRUE, overwrite=TRUE)
 }
 #bin <- unstack(binary_0.2)
 
