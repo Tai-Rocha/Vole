@@ -27,15 +27,18 @@ for(j in 1:length(sub)) {
   binary_0.2 <- stack_present >=0.2
   
   b <- paste0(names(binary_0.2@data),"_bin.tif")
-
+  
   writeRaster(binary_0.2, filename=b, bylayer=TRUE, overwrite=TRUE)
-  
+} 
 ############ DAqui pra baixo não funciona
+
+# Crie uma pasta para os novos resultados pos processados
   
-  continu <- binary_0.2*stack_present
-  
-  c <- paste0(names(binary_0.2@data),"_cont.tif")
-  writeRaster(continu, filename=c, bylayer=TRUE, overwrite=TRUE)
+bin_list <- list.files(path = "/home/taina/Documentos/Vole/Postprocessing/", recursive=TRUE, full.names=TRUE,  pattern='.tif') 
+stack_bin<- stack(bin_list)
+names(stack_bin)
+continu <-  stack_bin*stack_present
+writeRaster(continu, filename=paste0(names(stack_bin),"_cont.tif"), bylayer=TRUE, overwrite=TRUE)
  
-}
+
 ##########  End
