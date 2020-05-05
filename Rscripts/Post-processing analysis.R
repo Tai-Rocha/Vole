@@ -24,7 +24,7 @@ for(j in 1:length(sub)) {
   stack_present <- stack(h)
   print(stack_present)
   
-  binary_0.2 <- stack_present >=0.2
+  binary_0.2 <- stack_present >=0.20
   
   b <- paste0(names(binary_0.2@data),"_bin.tif")
   
