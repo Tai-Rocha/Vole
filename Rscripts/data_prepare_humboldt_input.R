@@ -20,7 +20,7 @@ combine_north <- cbind(coord_north,vals_north)
 
 env1<-humboldt.scrub.env(combine_north)
 
-write.csv(env1,"env_noth_vole_xyvalues.csv", sep = ",", dec = ".") 
+write.csv(env1,"env_noth_vole_envs.csv", sep = ",", dec = ".") 
 
 
 #############################################################################
@@ -45,4 +45,4 @@ combine_south <- cbind(coord_south,vals_south)
 env2<-humboldt.scrub.env(combine_south)
 
 
-write.csv(env2,"env_south_vole_xyvalues.csv", sep = ",", dec = ".") 
+write.csv(env2,"env_south_vole_envs.csv", sep = ",", dec = ".") 

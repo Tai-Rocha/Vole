@@ -1,13 +1,17 @@
 ## 
 
 
-env1 <- read.csv("./data/Humboldt_Inputs/env_noth_vole_xyvalues.csv", sep = ",", dec = ".")
+env1 <- read.csv("./data/Humboldt_Inputs/env_noth_vole_envs.csv", sep = ",", dec = ".")
 
-env2 <- read.csv("./data/Humboldt_Inputs/env_south_vole_xyvalues.csv", sep = ",", dec = ".")
+env2 <- read.csv("./data/Humboldt_Inputs/env_south_vole_envs.csv", sep = ",", dec = ".")
 
-occ.sp1 <- read.csv("./data/Humboldt_Inputs/North_Vole.csv", sep = ",", dec = ".")
+occ.sp1 <- read.csv("./data/planilhas_antigas/North_vole.csv", sep = ",", dec = ".")
 
-occ.sp2 <- read.csv("./data/Humboldt_Inputs/South_Vole.csv", sep = ",", dec = ".")
+occ.sp2 <- read.csv("./data/planilhas_antigas/South_vole.csv", sep = ",", dec = ".")
+
+
+
+
 ##humboldt do it all
 
 humboldt.doitall(inname = "DoItAll",
@@ -15,27 +19,27 @@ humboldt.doitall(inname = "DoItAll",
                  env2= env2, 
                  sp1 = occ.sp1,
                  sp2= occ.sp2,
-                 rarefy.dist = 0.5, 
+                 rarefy.dist = 1, 
                  rarefy.units = "km", 
                  env.reso = 0.00833, 
-                 reduce.env = 0,
+                 reduce.env = 2,
                  reductype = "PCA", 
-                 non.analogous.environments = "NO",
-                 nae.window = 2,
+                 non.analogous.environments = "YES",
+                 nae.window = 5,
                  env.trim = T, 
                  env.trim.type = "MCP", 
-                 trim.mask1,
-                 trim.mask2, 
-                 trim.buffer.sp1 = 200, 
-                 trim.buffer.sp2 = 200,
+                 #trim.mask1,
+                 #trim.mask2, 
+                 trim.buffer.sp1 = 50, 
+                 trim.buffer.sp2 = 50,
                  color.ramp = 1, 
                  correct.env = T, 
                  pcx = 1, 
                  pcy = 2,
-                 col.env = e.var,
-                 e.var=(3:25), 
-                 R = 50, 
-                 kern.smooth = 1, 
+                 #col.env = e.var,
+                 e.var=(3:24), 
+                 R = 200, 
+                 kern.smooth = 3, 
                  e.reps = 100,
                  b.reps = 100, 
                  b.force.equal.sample = F, 
