@@ -8,8 +8,7 @@ library(raster)
 library(humboldt)
 library(tcltk)
 
-## Data Prepare for Humboldt analysis Tijuca
-
+## Enviromental data
 
 envs_list <- list.files("./data/All_ENV_1_2/", pattern = ".tif", full.names = T)
 
