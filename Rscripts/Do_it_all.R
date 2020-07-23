@@ -1,9 +1,21 @@
-## 
+###################################
+## Niche simality analysis 
+## Humboldt package analysis
+## Author: Tainá Rocha
+###################################
+
+library(raster)
+library(humboldt)
+library(tcltk)
+
+####################################
+
+## Load enviromental a sp data
 
 
-env1 <- read.csv("./data/Humboldt_Inputs/env_noth_vole_envs.csv", sep = ",", dec = ".")
+env1 <- read.table("./data/Envs_Final_Humboldt_All_Variables/envs_vole.txt", sep = " ", dec = ".")
 
-env2 <- read.csv("./data/Humboldt_Inputs/env_south_vole_envs.csv", sep = ",", dec = ".")
+env2 <- read.table("./data/Envs_Final_Humboldt_All_Variables/envs_vole.txt", sep = " ", dec = ".")
 
 occ.sp1 <- read.csv("./data/planilhas_antigas/North_vole.csv", sep = ",", dec = ".")
 
@@ -12,7 +24,7 @@ occ.sp2 <- read.csv("./data/planilhas_antigas/South_vole.csv", sep = ",", dec = 
 
 
 
-##humboldt do it all
+##humboldt do it all funciotion 
 
 humboldt.doitall(inname = "DoItAll",
                  env1= env1, 
@@ -30,14 +42,14 @@ humboldt.doitall(inname = "DoItAll",
                  env.trim.type = "MCP", 
                  #trim.mask1,
                  #trim.mask2, 
-                 trim.buffer.sp1 = 50, 
-                 trim.buffer.sp2 = 50,
+                 trim.buffer.sp1 = 30, 
+                 trim.buffer.sp2 = 30,
                  color.ramp = 1, 
                  correct.env = T, 
                  pcx = 1, 
                  pcy = 2,
                  #col.env = e.var,
-                 e.var=(3:24), 
+                 e.var=(3:21), 
                  R = 200, 
                  kern.smooth = 3, 
                  e.reps = 100,
@@ -50,3 +62,5 @@ humboldt.doitall(inname = "DoItAll",
                  p.scatter = T, 
                  run.silent = T, 
                  ncores = 1)
+
+################################################### END
